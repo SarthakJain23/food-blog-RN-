@@ -3,6 +3,7 @@
     "name": "food-blog",
     "slug": "food-blog",
     "version": "1.0.0",
+    "backgroundColor": "#24180f",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
