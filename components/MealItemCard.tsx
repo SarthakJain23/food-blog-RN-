@@ -1,5 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Meal from "../models/meal";
+import MealDetails from "./MealDetails";
 import ShadowWrapper from "./ShadowWrapper";
 
 interface MealItemCardProps {
@@ -8,12 +9,6 @@ interface MealItemCardProps {
 }
 
 const MealItemCard: React.FC<MealItemCardProps> = ({ meal, onPress }) => {
-  const details = [
-    meal.duration,
-    meal.complexity.toUpperCase(),
-    meal.affordability.toUpperCase(),
-  ];
-
   return (
     <ShadowWrapper style={styles.mealItem}>
       <Pressable
@@ -28,13 +23,7 @@ const MealItemCard: React.FC<MealItemCardProps> = ({ meal, onPress }) => {
             <Image source={{ uri: meal.imageUrl }} style={styles.image} />
             <Text style={styles.title}>{meal.title}</Text>
           </View>
-          <View style={styles.details}>
-            {details.map((detail, index) => (
-              <Text key={index} style={styles.detailItem}>
-                {detail}
-              </Text>
-            ))}
-          </View>
+          <MealDetails meal={meal} />
         </View>
       </Pressable>
     </ShadowWrapper>
@@ -65,15 +54,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     margin: 8,
-  },
-  details: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 8,
-  },
-  detailItem: {
-    marginHorizontal: 4,
-    fontSize: 12,
   },
 });
