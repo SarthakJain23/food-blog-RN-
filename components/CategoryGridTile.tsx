@@ -1,5 +1,6 @@
-import { Platform, Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import Category from "../models/category";
+import ShadowWrapper from "./ShadowWrapper";
 
 interface CategoryGridTileProps {
   category: Category;
@@ -11,7 +12,7 @@ const CategoryGridTile: React.FC<CategoryGridTileProps> = ({
   onPress,
 }) => {
   return (
-    <View style={styles.gridItem}>
+    <ShadowWrapper style={styles.gridItem}>
       <Pressable
         style={({ pressed }) => [
           styles.button,
@@ -26,7 +27,7 @@ const CategoryGridTile: React.FC<CategoryGridTileProps> = ({
           <Text style={styles.title}>{category.title}</Text>
         </View>
       </Pressable>
-    </View>
+    </ShadowWrapper>
   );
 };
 
@@ -38,13 +39,6 @@ const styles = StyleSheet.create({
     margin: 16,
     height: 150,
     borderRadius: 8,
-    elevation: 4,
-    shadowColor: "black",
-    shadowOpacity: 0.25,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 8,
-    backgroundColor: "white",
-    overflow: Platform.OS === "android" ? "hidden" : "visible",
   },
   button: {
     flex: 1,
