@@ -3,9 +3,13 @@ import Category from "../models/category";
 
 interface CategoryGridTileProps {
   category: Category;
+  onPress: () => void;
 }
 
-const CategoryGridTile: React.FC<CategoryGridTileProps> = ({ category }) => {
+const CategoryGridTile: React.FC<CategoryGridTileProps> = ({
+  category,
+  onPress,
+}) => {
   return (
     <View style={styles.gridItem}>
       <Pressable
@@ -14,7 +18,7 @@ const CategoryGridTile: React.FC<CategoryGridTileProps> = ({ category }) => {
           pressed ? styles.buttonPressed : null,
         ]}
         android_ripple={{ color: "#ccc" }}
-        onPress={() => {}}
+        onPress={onPress}
       >
         <View
           style={[styles.innerContainer, { backgroundColor: category.color }]}
