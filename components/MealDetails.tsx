@@ -3,9 +3,10 @@ import Meal from "../models/meal";
 
 interface MealDetailsProps {
   meal: Meal;
+  textStyle?: any;
 }
 
-const MealDetails: React.FC<MealDetailsProps> = ({ meal }) => {
+const MealDetails: React.FC<MealDetailsProps> = ({ meal, textStyle }) => {
   const details = [
     meal.duration,
     meal.complexity.toUpperCase(),
@@ -15,7 +16,7 @@ const MealDetails: React.FC<MealDetailsProps> = ({ meal }) => {
   return (
     <View style={styles.details}>
       {details.map((detail, index) => (
-        <Text key={index} style={styles.detailItem}>
+        <Text key={index} style={[styles.detailItem, textStyle]}>
           {detail}
         </Text>
       ))}
