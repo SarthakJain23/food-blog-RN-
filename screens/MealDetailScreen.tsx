@@ -8,7 +8,7 @@ import MealDetails from "../components/MealDetails";
 import { MEALS } from "../data/dummy-data";
 
 interface MealDetailScreenProps {
-  route: { params: { mealId: string } };
+  route: any;
 }
 
 const MealDetailScreen: React.FC<MealDetailScreenProps> = ({ route }) => {
