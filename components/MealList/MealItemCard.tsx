@@ -1,7 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import Meal from "../models/meal";
-import MealDetails from "./MealDetails";
-import ShadowWrapper from "./ShadowWrapper";
+import Meal from "../../models/meal";
+import MealDetails from "../MealDetails";
+import ShadowWrapper from "../ShadowWrapper";
 
 interface MealItemCardProps {
   meal: Meal;
